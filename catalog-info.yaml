@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: slimy-newt-dotnet-basic-gitops
+  description: This is GitOps manifest for slimy-newt-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: slimy-newt-dotnet-basic
+    janus-idp.io/tekton: slimy-newt-dotnet-basic 
+    backstage.io/kubernetes-id: slimy-newt-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:slimy-newt-dotnet-basic
